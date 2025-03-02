@@ -11,6 +11,19 @@
 
 **DataDigger** is a powerful web application designed to extract and analyze structured data from websites. Built with Go, it provides a seamless experience for data extraction, analysis, and export.
 
+## 📊 Example Output
+
+DataDigger organizes extracted data into the following categories:
+
+| Content Type | HTML Tag | Text | URL | Metadata | Date |
+|--------------|----------|------|-----|----------|------|
+| title | title | Website Title | | | 2023-05-20 |
+| heading | h1 | Main Heading | | | 2023-05-20 |
+| paragraph | p | Content text... | | | 2023-05-20 |
+| link | a | Link text | https://example.com | | 2023-05-20 |
+| image | img | Alt text | https://example.com/image.jpg | | 2023-05-20 |
+| metadata | description | Site description | | | 2023-05-20 |
+
 ## Key Features
 
 - **Comprehensive Data Extraction**: Automatically collects and organizes:
