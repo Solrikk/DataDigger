@@ -1,19 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Scraper</title>
+    <meta name="description" content="DataDigger - A tool for extracting and analyzing data from web pages">
+    <title>DataDigger - Web Scraper</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Web Scraper Interface</h1>
+        <h1>DataDigger</h1>
+        <p class="subtitle">Powerful tool for extracting structured data from web pages</p>
+        
         <form id="scrapeForm">
-            <label for="url">Enter URL:</label>
-            <input type="text" id="url" name="url" required>
-            <button type="submit">Scrape</button>
+            <label for="url">Enter the URL of the website:</label>
+            <input type="text" id="url" name="url" placeholder="e.g., https://example.com" required>
+            <button type="submit">Extract Data</button>
         </form>
+        
+        <div class="instructions">
+            <h3>How to use:</h3>
+            <ol>
+                <li>Enter the URL of the web page</li>
+                <li>Click "Extract Data"</li>
+                <li>An Excel file with structured data will be automatically created and downloaded</li>
+                <li>Results will also be displayed below</li>
+            </ol>
+        </div>
+        
+        <div class="features">
+            <h3>Features:</h3>
+            <ul>
+                <li>Extracts page metadata, titles, headings, and paragraphs</li>
+                <li>Captures lists, links, images, and tables</li>
+                <li>Organizes content by type and HTML tag</li>
+                <li>Exports data in a structured Excel format</li>
+                <li>Shows preview of extracted content directly on the page</li>
+            </ul>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
