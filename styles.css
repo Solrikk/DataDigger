@@ -1,106 +1,254 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #72007a;
+    --primary-dark: #47004d;
+    --primary-light: #a8009e;
+    --text-color: #333;
+    --bg-color: #f8f8f8;
+    --card-bg: #ffffff;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 .container {
-  text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
 }
 
-form {
-  display: inline-block;
-  margin-top: 20px;
-}
-
-label, input, button {
-  display: block;
-  margin: 10px auto;
-}
 h1 {
-    margin: 20px 0;
-    color: #72007a;
-    font-size: 2em;
-    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
 }
 
 form {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    max-width: 400px;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 form label {
-    color: #7a006a;
+    color: var(--primary-color);
     font-weight: 500;
     margin-bottom: 10px;
-    align-self: flex-start;
+    display: block;
 }
 
 input[type="text"] {
     width: 100%;
     padding: 12px 15px;
     margin-bottom: 20px;
-    border: 1px solid #bbb;
-    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
     font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(114, 0, 122, 0.2);
 }
 
 button {
     padding: 12px 20px;
-    background-color: #6c007a;
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    width: 100%;
+    font-size: 1em;
 }
 
 button:hover {
-    background-color: #47004d;
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
-h2 {
-    margin: 30px 0 10px;
-    color: #47004d;
+button:active {
+    transform: translateY(0);
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    width: 90%;
-    max-width: 400px;
+.instructions, .features {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f0fa;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
 }
 
-li {
-    background: white;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.instructions h3, .features h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
-li a {
-    color: #7a0076;
-    text-decoration: none;
+.instructions ol, .features ul {
+    margin-left: 20px;
+}
+
+.instructions li, .features li {
+    margin-bottom: 8px;
+}
+
+#resultsContainer {
+    margin-top: 30px;
+}
+
+#resultsContainer h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+#data-table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#data-table th, #data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#data-table th {
     font-weight: 500;
 }
 
-li a:hover {
+#data-table tbody tr:hover {
+    background-color: #f9f0fa;
+}
+
+#data-table .section-header {
+    background-color: #f0f0f0;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+#data-table .section-header td {
+    font-size: 1.1em;
+    padding: 10px 15px;
+}
+
+.summary {
+    background-color: #f9f0fa;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+a {
+    color: #009e92;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #00766d;
     text-decoration: underline;
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-style: italic;
+}
+
+#error {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    display: none;
+}
+
+#loading {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 10px auto;
+    border: 3px solid rgba(114, 0, 122, 0.2);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    #data-table {
+        display: block;
+        overflow-x: auto;
+    }
 }
